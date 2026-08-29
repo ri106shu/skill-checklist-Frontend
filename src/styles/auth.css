@@ -1,0 +1,315 @@
+/* ============ AUTH LAYOUT ============ */
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+}
+
+/* ---- Right: form panel ---- */
+.auth-panel {
+  display: grid;
+  place-items: center;
+  padding: 40px 28px;
+  background:
+    radial-gradient(600px 300px at 80% 0%, rgba(29, 78, 216, 0.14), transparent 60%),
+    var(--bg-2);
+}
+.auth-form-wrap {
+  width: 100%;
+  max-width: 380px;
+}
+.form-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+.form-title {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.form-sub {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+.form-switch {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ============ LEFT HERO ============ */
+.auth-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 52px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(7, 11, 22, 0.2) 0%, rgba(7, 11, 22, 0.85) 78%),
+    radial-gradient(900px 500px at 50% -5%, rgba(56, 189, 248, 0.22), transparent 60%),
+    var(--bg);
+}
+.auth-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+.hero-title {
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.08;
+  font-weight: 800;
+  margin-bottom: 26px;
+}
+.grad {
+  background: linear-gradient(120deg, var(--blue), #7dd3fc 50%, var(--blue-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* target company chips */
+.target-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.target-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(20, 34, 62, 0.55);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+}
+.target-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 10px var(--glow);
+}
+
+/* pillars */
+.pillar-row {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.pillar-head {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.pillar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pillar li {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  padding: 3px 0;
+  color: var(--text);
+}
+.pillar li::before {
+  content: "▹";
+  color: var(--blue);
+  margin-right: 8px;
+}
+
+/* motto strip */
+.motto {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+.motto span {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.motto i {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue-2);
+}
+
+/* ---- animated skyline ---- */
+.skyline {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  opacity: 0.4;
+  filter: drop-shadow(0 0 20px rgba(56, 189, 248, 0.25));
+}
+.tower {
+  width: 8%;
+  background: linear-gradient(180deg, rgba(56, 189, 248, 0.35), rgba(29, 78, 216, 0.05));
+  border-top: 2px solid var(--blue);
+  border-radius: 3px 3px 0 0;
+  animation: flicker 4s ease-in-out infinite;
+}
+.tower.t0 { height: 55%; animation-delay: 0s; }
+.tower.t1 { height: 78%; animation-delay: 0.4s; }
+.tower.t2 { height: 42%; animation-delay: 0.9s; }
+.tower.t3 { height: 90%; animation-delay: 0.2s; }
+.tower.t4 { height: 62%; animation-delay: 1.2s; }
+.tower.t5 { height: 100%; animation-delay: 0.6s; }
+.tower.t6 { height: 48%; animation-delay: 1.5s; }
+.tower.t7 { height: 72%; animation-delay: 0.3s; }
+.tower.t8 { height: 58%; animation-delay: 1s; }
+@keyframes flicker {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.5; }
+}
+.sun {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(125, 211, 252, 0.7), rgba(56, 189, 248, 0) 70%);
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+  .auth-hero {
+    display: none;
+  }
+  .auth-panel {
+    min-height: 100vh;
+  }
+}
+
+/* ============ MOVING COMPANY MARQUEE ============ */
+.marquee-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+.marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 12px;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee-scroll linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: rgba(20, 34, 62, 0.55);
+  backdrop-filter: blur(8px);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+}
+.company-logo-img {
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 7px;
+  padding: 3px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+.company-logo-fallback {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 8px;
+  border: 1.5px solid;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
